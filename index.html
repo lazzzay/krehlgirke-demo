@@ -1,328 +1,1069 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>KREHL GIRKE — Architekten Konstanz · Bauen, das bleibt</title>
-<meta name="description" content="KREHL GIRKE Architekten in Konstanz · Wohnhäuser, Sanierung, Gewerbebau am Bodensee. Klare Linien, präzise Planung, ehrliche Beratung." />
-<meta name="theme-color" content="#0a0a0a" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KREHL GIRKE ARCHITEKTEN — Konstanz · Kreuzlingen · seit 1999</title>
+<meta name="description" content="KREHL GIRKE Architekten — Bauten in Konstanz, Kreuzlingen und über den Bodensee hinaus. Wohnungsbau, Gewerbe, öffentliche Bauten. Seit 1999.">
+<meta name="theme-color" content="#F2EFE8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  /* SWISS-MINIMAL ARCHITECTURE STYLE — totally different from all other demos */
   :root{
-    --paper:#f5f4f1;
-    --paper-2:#e8e6e0;
-    --ink:#0a0a0a;
-    --ink-soft:#3a3a3a;
-    --muted:#7a7a78;
-    --accent:#c8482c;
-    --line:#1a1a1a;
-    --maxw:1400px;
+    --paper: #F2EFE8;
+    --paper-2: #ECE7DA;
+    --ink: #0E0E0E;
+    --ink-2: #2A2A2A;
+    --steel: #6B6B6B;
+    --rule: #C8C2B3;
+    --rule-2: #E1DBC9;
+    --accent: #1B3A52;
+    --signal: #C73A12;
+
+    --sans: 'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    --mono: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
+
+    --max: 1380px;
+    --gutter: clamp(20px, 4vw, 56px);
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);line-height:1.5;font-weight:400;-webkit-font-smoothing:antialiased}
-  h1,h2,h3,h4{font-family:'Inter Tight',sans-serif;font-weight:600;letter-spacing:-.02em;line-height:1.05}
-  a{color:inherit;text-decoration:none}
-  img{max-width:100%;display:block}
-  ::selection{background:var(--accent);color:var(--paper)}
-
-  /* NAV — minimal, line-based */
-  header.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line)}
-  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:24px 40px;display:flex;align-items:center;justify-content:space-between}
-  .brand{font-family:'Inter Tight',sans-serif;font-size:18px;letter-spacing:.5px;font-weight:600}
-  .brand-mark{display:inline-block;width:14px;height:14px;background:var(--accent);margin-right:10px;vertical-align:middle}
-  nav ul{list-style:none;display:flex;gap:36px}
-  nav a{font-size:13px;color:var(--ink);font-weight:500;border-bottom:1px solid transparent;padding-bottom:2px;transition:border-color .2s}
-  nav a:hover{border-color:var(--ink)}
-  .nav-meta{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
-
-  /* HERO — typographic, no decoration */
-  .hero{padding:200px 40px 100px;border-bottom:1px solid var(--line);position:relative}
-  .hero-grid{max-width:var(--maxw);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}
-  .hero-left .num{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;margin-bottom:24px}
-  .hero-left .num span{color:var(--accent)}
-  h1.hero-title{font-size:clamp(56px,8vw,140px);font-weight:600;line-height:.92;margin-bottom:0;letter-spacing:-.04em}
-  h1.hero-title span{display:block;color:var(--accent)}
-  .hero-right{padding-bottom:18px}
-  .hero-right p{font-size:18px;color:var(--ink-soft);max-width:420px;margin-bottom:36px;line-height:1.55}
-  .hero-cta{display:inline-flex;align-items:center;gap:12px;padding:14px 24px;border:1px solid var(--ink);font-size:13px;font-weight:500;transition:all .25s}
-  .hero-cta:hover{background:var(--ink);color:var(--paper)}
-  .hero-cta::after{content:"→";transition:transform .2s}
-  .hero-cta:hover::after{transform:translateX(4px)}
-
-  /* Hero metadata grid below */
-  .hero-meta{max-width:var(--maxw);margin:80px auto 0;padding-top:30px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-  .hero-meta div{padding:24px 24px 0 0;border-right:1px solid var(--line)}
-  .hero-meta div:last-child{border-right:none}
-  .hero-meta .label{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
-  .hero-meta .value{font-family:'Inter Tight',sans-serif;font-size:24px;font-weight:600;letter-spacing:-.02em}
-
-  /* ABOUT — split layout, mostly text */
-  section{padding:140px 40px;border-bottom:1px solid var(--line)}
-  .container{max-width:var(--maxw);margin:0 auto}
-  .section-num{display:flex;align-items:baseline;gap:14px;margin-bottom:60px;border-bottom:1px solid var(--line);padding-bottom:14px}
-  .section-num .nr{font-family:'Inter Tight',sans-serif;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--accent)}
-  .section-num h2{font-size:13px;letter-spacing:2px;text-transform:uppercase;font-family:'Inter',sans-serif;font-weight:500;color:var(--ink);letter-spacing:.15em}
-
-  .about-grid{display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:start}
-  .about-label{font-size:15px;color:var(--muted);line-height:1.5;font-weight:500}
-  .about-text h3{font-size:clamp(28px,3.5vw,44px);margin-bottom:32px;font-weight:600}
-  .about-text p{font-size:17px;color:var(--ink-soft);margin-bottom:18px;max-width:740px}
-
-  /* PROJECTS — typographic, list-like with hover reveal */
-  .projects-list{display:flex;flex-direction:column}
-  .project-row{display:grid;grid-template-columns:80px 1.2fr 1fr 80px 100px;gap:24px;padding:28px 0;border-top:1px solid var(--line);align-items:center;cursor:pointer;transition:padding .25s}
-  .project-row:last-child{border-bottom:1px solid var(--line)}
-  .project-row:hover{padding-left:20px;background:var(--paper-2)}
-  .project-row .nr{font-family:'Inter Tight',sans-serif;font-variant-numeric:tabular-nums;font-size:13px;color:var(--muted);font-weight:500}
-  .project-row .title{font-family:'Inter Tight',sans-serif;font-size:22px;font-weight:600;letter-spacing:-.02em}
-  .project-row .meta{font-size:14px;color:var(--ink-soft)}
-  .project-row .year{font-family:'Inter Tight',sans-serif;font-variant-numeric:tabular-nums;font-size:14px;color:var(--ink-soft);font-weight:500}
-  .project-row .tag{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);justify-self:end}
-
-  /* SERVICES — 3x2 grid */
-  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-right:none;border-bottom:none}
-  .service-block{padding:48px 40px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .25s}
-  .service-block:hover{background:var(--paper-2)}
-  .service-block .nr{font-family:'Inter Tight',sans-serif;font-size:11px;letter-spacing:1px;color:var(--accent);font-weight:600;margin-bottom:18px;display:block}
-  .service-block h3{font-size:22px;margin-bottom:14px;font-weight:600}
-  .service-block p{font-size:14px;color:var(--ink-soft);line-height:1.55}
-
-  /* QUOTE — large editorial typography */
-  .quote{background:var(--ink);color:var(--paper);border-bottom:0}
-  .quote-grid{max-width:var(--maxw);margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:end}
-  .quote-grid .label{color:var(--muted);font-size:13px;letter-spacing:1px;text-transform:uppercase}
-  .quote-text{font-family:'Inter Tight',sans-serif;font-size:clamp(32px,4vw,56px);line-height:1.1;font-weight:500;letter-spacing:-.02em;margin-bottom:30px}
-  .quote-text span{color:var(--accent)}
-  .quote-source{font-size:13px;color:var(--muted);font-weight:500}
-
-  /* CONTACT */
-  .contact-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:60px;align-items:start}
-  .contact-block .label{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-  .contact-block p,.contact-block a{font-family:'Inter Tight',sans-serif;font-size:20px;font-weight:500;line-height:1.4;letter-spacing:-.01em;display:block}
-  .contact-block a:hover{color:var(--accent)}
-  .contact-block .meta-list{font-family:'Inter',sans-serif;font-size:14px;color:var(--ink-soft);font-weight:400;letter-spacing:0;line-height:1.7}
-
-  /* FOOTER */
-  footer{background:var(--ink);color:var(--paper);padding:60px 40px 40px;border-bottom:0}
-  .foot-inner{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:30px}
-  .foot-brand{font-family:'Inter Tight',sans-serif;font-size:32px;font-weight:600;letter-spacing:-.02em}
-  .foot-brand .brand-mark{background:var(--accent)}
-  .foot-meta{font-size:12px;color:var(--muted);text-align:right}
-  .foot-meta a{color:var(--paper);border-bottom:1px solid var(--muted);padding-bottom:1px}
-
-  @media (max-width:880px){
-    nav ul,.nav-meta{display:none}
-    .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
-    .hero-meta{grid-template-columns:1fr 1fr}
-    .hero-meta div{border-right:none;border-bottom:1px solid var(--line);padding:18px 0}
-    .service-grid{grid-template-columns:1fr}
-    .project-row{grid-template-columns:60px 1fr;gap:14px}
-    .project-row .meta,.project-row .year,.project-row .tag{display:none}
-    .quote-grid{grid-template-columns:1fr}
-    section{padding:80px 22px}
-    .hero{padding:140px 22px 70px}
-    .nav-inner{padding:18px 22px}
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:var(--sans);
+    background:var(--paper);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    font-size:15px;
+    line-height:1.6;
+    font-weight:400;
+    overflow-x:hidden;
   }
-  .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease, transform .8s ease}
-  .reveal.in{opacity:1;transform:none}
+  ::selection{ background:var(--ink); color:var(--paper); }
+  a{ color:inherit; text-decoration:none; transition:color 180ms ease; }
+  img{ display:block; max-width:100%; height:auto; }
+  button{ font:inherit; cursor:pointer; }
+
+  .wrap{ max-width:var(--max); margin:0 auto; padding:0 var(--gutter); }
+
+  /* ─────────── HEADER ─────────── */
+  header.top{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    background:rgba(242,239,232,0.95);
+    backdrop-filter:saturate(180%) blur(20px);
+    -webkit-backdrop-filter:saturate(180%) blur(20px);
+    border-bottom:1px solid var(--rule);
+  }
+  .top-inner{
+    max-width:var(--max); margin:0 auto;
+    padding:20px var(--gutter);
+    display:grid;
+    grid-template-columns:auto 1fr auto;
+    align-items:center;
+    gap:48px;
+  }
+  .brand{
+    font-family:var(--sans);
+    font-weight:600;
+    letter-spacing:0.16em;
+    font-size:13px;
+    text-transform:uppercase;
+    color:var(--ink);
+  }
+  .brand .light{ font-weight:300; }
+  nav.top-nav{
+    display:flex; gap:40px;
+    font-size:12px; letter-spacing:0.18em; text-transform:uppercase;
+    font-weight:500;
+    justify-self:center;
+  }
+  nav.top-nav a{ color:var(--ink-2); }
+  nav.top-nav a:hover{ color:var(--accent); }
+  .top-meta{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--steel);
+  }
+
+  /* ─────────── HERO ─────────── */
+  section.hero{
+    padding-top:65px;
+    border-bottom:1px solid var(--ink);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1fr 1.3fr;
+    min-height:calc(100vh - 65px);
+  }
+  .hero-left{
+    padding:80px var(--gutter);
+    display:flex; flex-direction:column; justify-content:space-between;
+    border-right:1px solid var(--ink);
+    background:var(--paper);
+  }
+  .hero-tag{
+    font-family:var(--mono);
+    font-size:11px; letter-spacing:0.18em; color:var(--steel);
+    text-transform:uppercase;
+    margin-bottom:48px;
+    display:flex; align-items:center; gap:14px;
+  }
+  .hero-tag::before{ content:""; width:24px; height:1px; background:var(--ink); }
+  h1.lede{
+    font-family:var(--sans);
+    font-weight:300;
+    font-size:clamp(40px, 5vw, 80px);
+    line-height:0.98;
+    letter-spacing:-0.03em;
+    color:var(--ink);
+    margin-bottom:32px;
+  }
+  h1.lede em{
+    font-style:normal;
+    background:var(--ink);
+    color:var(--paper);
+    padding:0 14px 6px;
+    font-weight:500;
+  }
+  .lede-sub{
+    max-width:42ch;
+    font-size:16px;
+    color:var(--ink-2);
+    line-height:1.65;
+  }
+  .hero-data{
+    margin-top:auto;
+    padding-top:48px;
+    border-top:1px solid var(--ink);
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:32px;
+  }
+  .hero-data .k{ font-family:var(--mono); font-size:11px; color:var(--steel); letter-spacing:0.1em; margin-bottom:6px; }
+  .hero-data .v{ font-family:var(--sans); font-size:22px; font-weight:500; color:var(--ink); line-height:1.2; }
+  .hero-data .v small{ font-family:var(--mono); font-size:11px; font-weight:400; color:var(--steel); margin-left:6px; }
+
+  .hero-right{
+    position:relative;
+    background:#0a0a0a;
+    overflow:hidden;
+  }
+  .hero-right img{
+    width:100%; height:100%; object-fit:cover;
+    filter:grayscale(100%) contrast(1.08);
+  }
+  .hero-cap{
+    position:absolute; left:0; right:0; bottom:0;
+    padding:24px var(--gutter);
+    background:linear-gradient(to top, rgba(10,10,10,0.85), transparent);
+    color:var(--paper);
+    display:flex; justify-content:space-between; align-items:flex-end; gap:24px;
+    font-family:var(--mono); font-size:11px; letter-spacing:0.08em;
+  }
+  .hero-cap .l{ display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
+  .hero-cap .badge{
+    background:var(--signal); color:var(--paper);
+    padding:4px 10px; font-size:10px; letter-spacing:0.22em; font-weight:600;
+  }
+  .hero-cap .year{ color:rgba(242,239,232,0.65); }
+
+  /* ─────────── SECTION-HEAD (vereinfacht) ─────────── */
+  .sec{
+    padding:120px 0 80px;
+  }
+  .sec-head{
+    margin-bottom:64px;
+    padding-bottom:24px;
+    border-bottom:1px solid var(--ink);
+    display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap;
+  }
+  .sec-head .label{
+    font-family:var(--mono);
+    font-size:11px; letter-spacing:0.22em;
+    color:var(--steel); text-transform:uppercase;
+  }
+  .sec-head .label b{ color:var(--ink); font-weight:500; margin-right:8px; }
+  h2.sec-h{
+    font-family:var(--sans);
+    font-weight:300;
+    font-size:clamp(32px, 4vw, 56px);
+    line-height:1;
+    letter-spacing:-0.025em;
+    color:var(--ink);
+    margin-top:8px;
+  }
+  .sec-meta{
+    font-family:var(--mono);
+    font-size:11px; color:var(--steel); letter-spacing:0.14em;
+    text-transform:uppercase;
+  }
+
+  /* ─────────── WERK / PROJEKTE ─────────── */
+  .proj-grid{
+    display:grid;
+    grid-template-columns:repeat(12, 1fr);
+    gap:32px;
+    row-gap:64px;
+  }
+  .pcard{ cursor:pointer; display:flex; flex-direction:column; }
+  .pcard.l{ grid-column:span 8; }
+  .pcard.m{ grid-column:span 6; }
+  .pcard.s{ grid-column:span 4; }
+  .pcard .img{
+    overflow:hidden;
+    background:#0a0a0a;
+    aspect-ratio:4/3;
+    position:relative;
+    border:1px solid var(--ink);
+  }
+  .pcard.l .img{ aspect-ratio:16/9; }
+  .pcard .img img{
+    width:100%; height:100%; object-fit:cover;
+    filter:grayscale(100%) contrast(1.05);
+    transition:transform 700ms cubic-bezier(0.16,1,0.3,1), filter 400ms ease;
+  }
+  .pcard:hover .img img{ transform:scale(1.025); filter:grayscale(0%) contrast(1.02); }
+  .pcard .badge{
+    position:absolute; top:14px; left:14px;
+    background:var(--paper); color:var(--ink);
+    padding:4px 10px;
+    font-family:var(--mono); font-size:10px; letter-spacing:0.18em; font-weight:500;
+  }
+  .pcard .badge.award{ background:var(--signal); color:var(--paper); }
+  .pcard .cat{
+    margin-top:18px;
+    font-family:var(--mono); font-size:11px;
+    color:var(--steel); letter-spacing:0.16em; text-transform:uppercase;
+    display:flex; justify-content:space-between;
+    padding-bottom:10px; border-bottom:1px solid var(--rule);
+  }
+  .pcard .title{
+    font-family:var(--sans);
+    font-weight:500;
+    font-size:22px;
+    line-height:1.22;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+    margin-top:14px;
+  }
+  .pcard.s .title{ font-size:18px; }
+  .pcard.l .title{ font-size:26px; }
+  .pcard .lead{
+    font-size:14px; color:var(--ink-2); line-height:1.6;
+    margin-top:10px;
+    max-width:48ch;
+  }
+  .pcard .data{
+    margin-top:18px;
+    padding-top:14px;
+    border-top:1px solid var(--rule-2);
+    display:grid;
+    grid-template-columns:80px 1fr;
+    gap:6px 16px;
+    font-family:var(--mono); font-size:12px;
+  }
+  .pcard .data dt{ color:var(--steel); letter-spacing:0.08em; text-transform:uppercase; font-size:11px; }
+  .pcard .data dd{ color:var(--ink); }
+
+  /* ─────────── INDEX (Karte + Liste) ─────────── */
+  section.index{
+    background:var(--paper-2);
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+  }
+  .idx-shell{
+    display:grid;
+    grid-template-columns:1.25fr 1fr;
+    gap:48px;
+    min-height:520px;
+  }
+  .idx-map{
+    background:var(--paper);
+    border:1px solid var(--ink);
+    padding:32px;
+  }
+  .idx-map h4{
+    font-family:var(--mono); font-size:10px; letter-spacing:0.22em;
+    color:var(--steel); text-transform:uppercase; margin-bottom:24px;
+  }
+  .map-svg{ width:100%; height:auto; }
+
+  .idx-list h4{
+    font-family:var(--mono); font-size:10px; letter-spacing:0.22em;
+    color:var(--steel); text-transform:uppercase; margin-bottom:24px;
+  }
+  .idx-rows{ border-top:1px solid var(--ink); }
+  .idx-row{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:18px;
+    padding:16px 0;
+    border-bottom:1px solid var(--rule);
+    align-items:baseline;
+    cursor:pointer;
+    transition:padding 200ms ease;
+  }
+  .idx-row:hover{ padding-left:10px; }
+  .idx-row:hover .idx-name{ color:var(--accent); }
+  .idx-name{
+    font-family:var(--sans); font-size:15px; font-weight:500;
+    color:var(--ink); transition:color 200ms ease;
+  }
+  .idx-name .sub{
+    display:inline; font-family:var(--mono); font-size:11px; font-weight:400;
+    color:var(--steel); letter-spacing:0.04em;
+    margin-left:10px; text-transform:none;
+  }
+  .idx-year{
+    font-family:var(--mono); font-size:12px;
+    color:var(--ink-2); font-variant-numeric:tabular-nums;
+  }
+  .idx-year.award{ color:var(--signal); font-weight:500; }
+
+  /* ─────────── ZEITLINIE ─────────── */
+  .tl-track{
+    position:relative;
+    padding-top:48px;
+    padding-bottom:32px;
+  }
+  .tl-years{
+    display:grid;
+    grid-template-columns:repeat(7, 1fr);
+    font-family:var(--mono); font-size:11px;
+    color:var(--steel);
+    padding-bottom:0;
+    border-bottom:1px solid var(--ink);
+  }
+  .tl-years span{
+    text-align:center;
+    padding-bottom:8px;
+  }
+  .tl-marks{
+    display:grid;
+    grid-template-columns:repeat(7, 1fr);
+    position:relative;
+    padding-top:32px;
+  }
+  .tl-marks .pin{
+    position:relative;
+    text-align:center;
+    cursor:pointer;
+    transition:transform 220ms ease;
+  }
+  .tl-marks .pin::before{
+    content:"";
+    width:11px; height:11px;
+    background:var(--paper);
+    border:1.5px solid var(--ink);
+    border-radius:50%;
+    position:absolute;
+    top:-37px; left:50%;
+    transform:translateX(-50%);
+    transition:transform 220ms ease, background 220ms ease;
+  }
+  .tl-marks .pin.award::before{ background:var(--signal); border-color:var(--signal); }
+  .tl-marks .pin:hover{ transform:translateY(-3px); }
+  .tl-marks .pin:hover::before{ transform:translateX(-50%) scale(1.4); }
+  .tl-marks .pin .label{
+    font-family:var(--mono); font-size:10px; color:var(--ink-2);
+    line-height:1.4;
+    letter-spacing:0.04em;
+    padding:0 8px;
+  }
+  .tl-marks .pin .label b{ color:var(--ink); font-weight:600; display:block; margin-bottom:2px; }
+
+  /* ─────────── HALTUNG ─────────── */
+  section.phil{
+    background:var(--ink);
+    color:var(--paper);
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+  }
+  section.phil .sec-head{
+    border-bottom-color:rgba(242,239,232,0.18);
+  }
+  section.phil .sec-head .label{ color:rgba(242,239,232,0.5); }
+  section.phil .sec-head .label b{ color:var(--paper); }
+  section.phil h2.sec-h{ color:var(--paper); }
+  section.phil .sec-meta{ color:rgba(242,239,232,0.5); }
+  .phil-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:48px;
+  }
+  .phil-col{
+    border-top:1px solid rgba(242,239,232,0.2);
+    padding-top:28px;
+  }
+  .phil-num{
+    font-family:var(--mono); font-size:11px; letter-spacing:0.22em;
+    color:rgba(242,239,232,0.5); margin-bottom:20px;
+  }
+  .phil-h{
+    font-family:var(--sans); font-weight:300;
+    font-size:30px; line-height:1.1; letter-spacing:-0.02em;
+    margin-bottom:16px;
+    color:var(--paper);
+  }
+  .phil-t{
+    font-size:14px; color:rgba(242,239,232,0.78);
+    line-height:1.7; max-width:34ch;
+  }
+
+  /* ─────────── TEAM ─────────── */
+  .team-intro{
+    margin-bottom:64px;
+    padding-bottom:48px;
+    display:grid;
+    grid-template-columns:200px 1fr;
+    gap:48px;
+    border-bottom:1px solid var(--rule);
+  }
+  .team-intro .label{
+    font-family:var(--mono); font-size:11px;
+    color:var(--steel); letter-spacing:0.22em; text-transform:uppercase;
+  }
+  .team-intro .text{
+    font-family:var(--sans);
+    font-weight:300;
+    font-size:clamp(20px, 1.8vw, 26px);
+    line-height:1.45;
+    letter-spacing:-0.005em;
+    max-width:62ch;
+    color:var(--ink);
+  }
+  .team-intro .text p+p{ margin-top:1em; }
+  .team-intro .text mark{
+    background:transparent;
+    color:var(--accent);
+    border-bottom:1px solid var(--accent);
+    padding-bottom:1px;
+  }
+  .team-cards{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:24px;
+  }
+  .partner{
+    border:1px solid var(--ink);
+    padding:28px 24px;
+    background:var(--paper);
+    transition:transform 220ms ease, box-shadow 220ms ease;
+  }
+  .partner:hover{ transform:translateY(-4px); box-shadow:0 14px 32px -16px rgba(0,0,0,0.18); }
+  .partner .pid{
+    font-family:var(--mono); font-size:10px;
+    color:var(--steel); letter-spacing:0.22em; text-transform:uppercase;
+    margin-bottom:14px;
+    display:flex; justify-content:space-between;
+  }
+  .partner .pid .role{ color:var(--ink); }
+  .partner h3{
+    font-family:var(--sans);
+    font-weight:500;
+    font-size:24px; letter-spacing:-0.015em;
+    color:var(--ink);
+    margin-bottom:20px;
+    line-height:1.1;
+  }
+  .partner .cv{
+    font-size:13px; color:var(--ink-2); line-height:1.7;
+    border-top:1px solid var(--rule);
+    padding-top:16px;
+  }
+  .partner .cv-row{
+    display:grid; grid-template-columns:62px 1fr;
+    gap:12px;
+    padding:3px 0;
+  }
+  .partner .cv-row .y{
+    font-family:var(--mono); font-size:11px; color:var(--steel);
+    font-variant-numeric:tabular-nums;
+  }
+  .partner .cv-row.highlight .label{
+    color:var(--accent);
+    font-weight:500;
+  }
+  .partner a.mail{
+    display:inline-block;
+    margin-top:18px;
+    font-family:var(--mono); font-size:11px; letter-spacing:0.12em;
+    color:var(--ink);
+    border-bottom:1px solid var(--ink);
+    padding-bottom:2px;
+  }
+  .partner a.mail:hover{ color:var(--accent); border-color:var(--accent); }
+
+  /* ─────────── KONTAKT ─────────── */
+  section.contact{
+    background:var(--ink);
+    color:var(--paper);
+    border-top:1px solid var(--ink);
+  }
+  section.contact .sec-head{ border-bottom-color:rgba(242,239,232,0.18); }
+  section.contact .sec-head .label{ color:rgba(242,239,232,0.5); }
+  section.contact .sec-head .label b{ color:var(--paper); }
+  section.contact h2.sec-h{ color:var(--paper); }
+  section.contact .sec-meta{ color:rgba(242,239,232,0.5); }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:48px;
+  }
+  .c-card{
+    border-top:1px solid rgba(242,239,232,0.2);
+    padding-top:28px;
+  }
+  .c-card .lbl{
+    font-family:var(--mono); font-size:10px;
+    letter-spacing:0.22em; color:rgba(242,239,232,0.5); text-transform:uppercase;
+    margin-bottom:16px;
+  }
+  .c-card .lbl b{ color:var(--paper); font-weight:500; }
+  .c-card .name{
+    font-family:var(--sans); font-weight:500; font-size:18px;
+    margin-bottom:14px; color:var(--paper);
+  }
+  .c-card p{
+    color:rgba(242,239,232,0.78);
+    font-size:14px; line-height:1.75;
+  }
+  .c-card a{
+    color:var(--paper);
+    border-bottom:1px solid rgba(242,239,232,0.3);
+    padding-bottom:1px;
+  }
+  .c-card a:hover{ color:#ffaa88; border-color:#ffaa88; }
+  .c-card .mono{
+    font-family:var(--mono); font-size:13px;
+  }
+
+  /* ─────────── FOOTER ─────────── */
+  footer.bottom{
+    background:var(--ink);
+    color:rgba(242,239,232,0.45);
+    padding:32px 0 48px;
+    border-top:1px solid rgba(242,239,232,0.12);
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.1em;
+  }
+  .foot-grid{
+    display:flex; justify-content:space-between; align-items:center;
+    gap:24px; flex-wrap:wrap;
+    text-transform:uppercase;
+  }
+  .foot-nav{ display:flex; gap:28px; }
+  .foot-nav a{ color:rgba(242,239,232,0.65); }
+  .foot-nav a:hover{ color:#ffaa88; }
+
+  /* ─────────── MOBILE ─────────── */
+  @media (max-width:980px){
+    .top-inner{ grid-template-columns:1fr auto; padding:16px 20px; gap:20px; }
+    nav.top-nav{ display:none; }
+    .top-meta{ display:none; }
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-left{ padding:64px 20px 48px; border-right:none; border-bottom:1px solid var(--ink); }
+    .hero-right{ min-height:56vh; }
+    .sec{ padding:80px 0 56px; }
+    .sec-head{ margin-bottom:40px; }
+    .proj-grid{ grid-template-columns:1fr; gap:48px; }
+    .pcard.l, .pcard.m, .pcard.s{ grid-column:span 1; }
+    .pcard.l .img{ aspect-ratio:16/10; }
+    .pcard .img{ aspect-ratio:16/10; }
+    .idx-shell{ grid-template-columns:1fr; gap:32px; min-height:auto; }
+    .idx-map{ padding:20px; }
+    .tl-years, .tl-marks{ grid-template-columns:repeat(4, 1fr); gap:8px; }
+    .tl-marks .pin:nth-child(n+5){ display:none; }
+    .tl-years span:nth-child(n+5){ display:none; }
+    .phil-grid{ grid-template-columns:1fr; gap:32px; }
+    .team-intro{ grid-template-columns:1fr; gap:16px; }
+    .team-cards{ grid-template-columns:1fr 1fr; gap:16px; }
+    .contact-grid{ grid-template-columns:1fr; gap:32px; }
+  }
+  @media (max-width:560px){
+    .team-cards{ grid-template-columns:1fr; }
+    .hero-data{ grid-template-columns:1fr 1fr; gap:16px; }
+    .hero-data .v{ font-size:18px; }
+    .pcard .data{ grid-template-columns:70px 1fr; gap:4px 12px; }
+  }
 </style>
 </head>
 <body>
 
-<header class="nav">
-  <div class="nav-inner">
-    <a href="#" class="brand"><span class="brand-mark"></span>KREHL GIRKE</a>
-    <nav><ul>
-      <li><a href="#about">Büro</a></li>
-      <li><a href="#projects">Projekte</a></li>
-      <li><a href="#services">Leistungen</a></li>
-      <li><a href="#contact">Kontakt</a></li>
-    </ul></nav>
-    <div class="nav-meta">Konstanz · 2026</div>
+<!-- ─────────── HEADER ─────────── -->
+<header class="top">
+  <div class="top-inner">
+    <a href="#" class="brand">KREHL GIRKE <span class="light">Architekten</span></a>
+    <nav class="top-nav">
+      <a href="#werk">Werk</a>
+      <a href="#index">Index</a>
+      <a href="#studio">Studio</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="top-meta">DE · CH</div>
   </div>
 </header>
 
+<!-- ─────────── HERO ─────────── -->
 <section class="hero">
   <div class="hero-grid">
-    <div class="hero-left reveal">
-      <div class="num">001 — <span>ARCHITEKTUR · KONSTANZ</span></div>
-      <h1 class="hero-title">Bauen,<br/>das <span>bleibt.</span></h1>
+
+    <div class="hero-left">
+      <div>
+        <div class="hero-tag">Architekturbüro · seit 1999</div>
+        <h1 class="lede">
+          Bauen heisst<br>
+          <em>präzise</em><br>
+          antworten.
+        </h1>
+        <p class="lede-sub">
+          Wohnungsbau, Gewerbe- und Industriebauten, öffentliche Bauten.
+          Aus zwei Standorten am Bodensee — als Generalplaner und Wettbewerbsbüro.
+        </p>
+      </div>
+
+      <div class="hero-data">
+        <div>
+          <div class="k">Werk</div>
+          <div class="v">50<small>+ Projekte seit 1999</small></div>
+        </div>
+        <div>
+          <div class="k">1. Preise</div>
+          <div class="v">6<small>Realisierungswettbewerbe</small></div>
+        </div>
+        <div>
+          <div class="k">Standorte</div>
+          <div class="v">2<small>Konstanz · Kreuzlingen</small></div>
+        </div>
+        <div>
+          <div class="k">Letztes Werk</div>
+          <div class="v">2026<small>BA I Ravensberg fertig</small></div>
+        </div>
+      </div>
     </div>
-    <div class="hero-right reveal">
-      <p>Wir entwerfen Wohnhäuser, sanieren Bestand und planen Gewerbe am Bodensee — mit klarer Haltung und ohne Kompromisse bei der Ausführung.</p>
-      <a href="#projects" class="hero-cta">Projekte ansehen</a>
+
+    <div class="hero-right">
+      <img src="https://images.squarespace-cdn.com/content/v1/68e7c8a27182d329a47d5c0f/48246022-00a2-4f27-b141-a9e4356c1993/052_240518_MAIN-VIEW-PSD+Kopie.jpg" alt="Heinrich-Suso-Gymnasium Konstanz" loading="eager">
+      <div class="hero-cap">
+        <div class="l">
+          <span class="badge">1. Preis</span>
+          <span>Heinrich-Suso-Gymnasium · Konstanz</span>
+        </div>
+        <div class="year">2024</div>
+      </div>
     </div>
+
   </div>
-  <div class="hero-meta">
+</section>
+
+<!-- ─────────── WERK ─────────── -->
+<section id="werk" class="sec wrap">
+  <div class="sec-head">
     <div>
-      <div class="label">Gegründet</div>
-      <div class="value">2008</div>
+      <div class="label"><b>01</b>Werk</div>
+      <h2 class="sec-h">Ausgewählte Arbeiten</h2>
     </div>
-    <div>
-      <div class="label">Realisiert</div>
-      <div class="value">120+</div>
+    <div class="sec-meta">8 Bauten · 2016 — 2026</div>
+  </div>
+
+  <div class="proj-grid">
+
+    <article class="pcard l">
+      <div class="img">
+        <img src="https://images.squarespace-cdn.com/content/v1/68e7c8a27182d329a47d5c0f/6af6b97f-a202-44fe-8071-be2331a713de/230703_Visualisierung_Sanner+Kopie.png" alt="SANNER Bensheim">
+        <span class="badge">2023 — 24</span>
+      </div>
+      <div class="cat"><span>Gewerbe &amp; Industrie</span><span>Generalplanung</span></div>
+      <h3 class="title">SANNER — Neubau Verwaltung &amp; Produktion</h3>
+      <p class="lead">Spatenstich 01/2023, Einweihung 10/2024. Einer unserer größten Industriebauten — vollständige Generalplanung.</p>
+      <dl class="data">
+        <dt>Ort</dt><dd>Bensheim, DE</dd>
+        <dt>BGF</dt><dd>27.600 m²</dd>
+        <dt>Bauherr</dt><dd>Catulus Grundst.verwaltung</dd>
+      </dl>
+    </article>
+
+    <article class="pcard m" style="grid-column:span 4;">
+      <div class="img">
+        <img src="https://images.squarespace-cdn.com/content/v1/68e7c8a27182d329a47d5c0f/e7a73c7e-fcc8-4326-9dbe-9adc9fc50abb/054_240518_INTERIOR-SCHOOL.jpg" alt="Heinrich-Suso-Gymnasium">
+        <span class="badge award">1. Preis</span>
+      </div>
+      <div class="cat"><span>Öffentlich · Wettbewerb</span><span>07 / 2024</span></div>
+      <h3 class="title">Heinrich-Suso-Gymnasium</h3>
+      <p class="lead">Erweiterung &amp; Neubau Sporthalle. Arge mit D'ALOISIO ARCHITEKTEN BDA und GNÄDINGER Landschaftsarchitekten.</p>
+      <dl class="data">
+        <dt>Ort</dt><dd>Konstanz</dd>
+        <dt>BGF</dt><dd>4.785 m²</dd>
+        <dt>Ausloberin</dt><dd>Stadt Konstanz</dd>
+      </dl>
+    </article>
+
+    <article class="pcard m" style="grid-column:span 6;">
+      <div class="img">
+        <img src="https://images.squarespace-cdn.com/content/v1/68e7c8a27182d329a47d5c0f/1f8a5018-f059-4167-9cf9-88af739a22fa/1+Mende.jpg" alt="Bodenseeforum Konstanz">
+        <span class="badge">2016</span>
+      </div>
+      <div class="cat"><span>Öffentlicher Bau</span><span>realisiert</span></div>
+      <h3 class="title">Bodenseeforum Konstanz</h3>
+      <p class="lead">Umbau eines Forschungszentrums zum Veranstaltungshaus und zur IHK-Hauptverwaltung Hochrhein-Bodensee. Fotografie Achim Mende.</p>
+      <dl class="data">
+        <dt>Ort</dt><dd>Konstanz</dd>
+        <dt>BGF</dt><dd>10.716 m²</dd>
+        <dt>Bauherr</dt><dd>Stadt Konstanz · IHK HRB</dd>
+      </dl>
+    </article>
+
+    <article class="pcard m" style="grid-column:span 6;">
+      <div class="img">
+        <img src="https://images.squarespace-cdn.com/content/v1/68e7c8a27182d329a47d5c0f/a1d27b56-aa42-4a66-957e-d93e94738700/Ansicht+01.jpg" alt="Ravensberg Areal Konstanz">
+        <span class="badge award">1. Preis · im Bau</span>
+      </div>
+      <div class="cat"><span>Wohnungsbau · Wettbewerb</span><span>2020 — heute</span></div>
+      <h3 class="title">Wohnbebauung Ravensberg Areal</h3>
+      <p class="lead">Brownfield-Konversion: Umwandlung des Geländes der Ravensberg Chemischen Fabrik in 23.000 m² Wohnraum. BA I abgeschlossen 01/2026, BA II läuft.</p>
+      <dl class="data">
+        <dt>Ort</dt><dd>Konstanz</dd>
+        <dt>BGF</dt><dd>23.000 m²</dd>
+        <dt>Bauherr</dt><dd>Ravensberg GmbH Chem. Fabrik</dd>
+        <dt>Leistung</dt><dd>Entwurf · Planung · OBL</dd>
+      </dl>
+    </article>
+
+    <article class="pcard s">
+      <div class="img">
+        <img src="https://images.squarespace-cdn.com/content/v1/68e7c8a27182d329a47d5c0f/d62a2c11-6218-4451-ab6d-2e8aa5f58cc1/250910_BV-Amalienstrasse_Perspektive.jpg" alt="Amalienstrasse Konstanz">
+        <span class="badge">BG 11/25</span>
+      </div>
+      <div class="cat"><span>Wohnungsbau</span><span>2024</span></div>
+      <h3 class="title">Wohnbebauung Amalienstrasse</h3>
+      <p class="lead">43 Wohneinheiten inkl. Tiefgarage. Baugenehmigung 11/2025.</p>
+      <dl class="data">
+        <dt>Ort</dt><dd>Konstanz</dd>
+        <dt>BGF</dt><dd>5.900 m²</dd>
+        <dt>Bauherr</dt><dd>Schendel Wohnbau</dd>
+      </dl>
+    </article>
+
+    <article class="pcard s">
+      <div class="img">
+        <img src="https://images.squarespace-cdn.com/content/v1/68e7c8a27182d329a47d5c0f/c4708c03-29da-41cb-9358-2bb4331e238d/210902_Hockgraben+Perspektive+Kopie.jpg" alt="Jungerhalde-West Konstanz">
+        <span class="badge award">1. Preis</span>
+      </div>
+      <div class="cat"><span>Quartier · Wettbewerb</span><span>09 / 2021</span></div>
+      <h3 class="title">Quartier Jungerhalde-West</h3>
+      <p class="lead">Quartiersentwicklung Allmannsdorf — neues Stadtquartier in Konstanz.</p>
+      <dl class="data">
+        <dt>Ort</dt><dd>Konstanz · Allmannsdorf</dd>
+        <dt>Status</dt><dd>Realisierung</dd>
+      </dl>
+    </article>
+
+    <article class="pcard s">
+      <div class="img">
+        <img src="https://images.squarespace-cdn.com/content/v1/68e7c8a27182d329a47d5c0f/2dae9bc9-6dcb-4d9d-b477-45d444c54305/Neubau+AVL+SET+Wangen_ext_1.jpg" alt="AVL SET Wangen">
+        <span class="badge">2022</span>
+      </div>
+      <div class="cat"><span>Gewerbe · F&amp;E</span><span>realisiert</span></div>
+      <h3 class="title">AVL SET — Forschung &amp; Verwaltung</h3>
+      <p class="lead">Neubau Forschungs- und Verwaltungsbau für die AVL SET GmbH.</p>
+      <dl class="data">
+        <dt>Ort</dt><dd>Wangen, DE</dd>
+        <dt>Bauherr</dt><dd>AVL SET GmbH</dd>
+      </dl>
+    </article>
+
+  </div>
+</section>
+
+<!-- ─────────── INDEX ─────────── -->
+<section id="index" class="sec index">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="label"><b>02</b>Index</div>
+        <h2 class="sec-h">Wo wir bauen</h2>
+      </div>
+      <div class="sec-meta">Bodensee · Hegau · Hochrhein</div>
     </div>
-    <div>
-      <div class="label">Auszeichnungen</div>
-      <div class="value">7</div>
-    </div>
-    <div>
-      <div class="label">Team</div>
-      <div class="value">12</div>
+
+    <div class="idx-shell">
+
+      <div class="idx-map">
+        <h4>Region · Standortübersicht</h4>
+        <svg class="map-svg" viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" aria-label="Karte der Projektstandorte am Bodensee">
+          <defs>
+            <pattern id="hatch" patternUnits="userSpaceOnUse" width="6" height="6" patternTransform="rotate(45)">
+              <line x1="0" y1="0" x2="0" y2="6" stroke="#C8C2B3" stroke-width="0.6"/>
+            </pattern>
+          </defs>
+          <path d="M 70 240 Q 130 180 230 195 Q 320 200 380 230 Q 440 250 520 245 Q 590 240 630 270 Q 660 290 645 320 Q 600 360 510 360 Q 420 360 360 340 Q 280 320 200 320 Q 130 320 90 290 Z" fill="url(#hatch)" stroke="#1B3A52" stroke-width="1.2"/>
+          <line x1="0" y1="360" x2="720" y2="380" stroke="#1B3A52" stroke-dasharray="3,4" stroke-width="0.8" opacity="0.5"/>
+          <text x="640" y="395" font-family="JetBrains Mono" font-size="9" fill="#5C5C5C">DE · CH</text>
+
+          <g>
+            <circle cx="305" cy="305" r="22" fill="none" stroke="#1B3A52" stroke-width="1" opacity="0.4"/>
+            <circle cx="305" cy="305" r="9" fill="#C73A12"/>
+            <text x="305" y="289" text-anchor="middle" font-family="Inter" font-size="11" font-weight="600" fill="#0A0A0A">KONSTANZ</text>
+            <text x="305" y="333" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#5C5C5C">12 Projekte</text>
+          </g>
+          <g>
+            <circle cx="305" cy="358" r="6" fill="#1B3A52"/>
+            <text x="305" y="378" text-anchor="middle" font-family="Inter" font-size="10" fill="#0A0A0A">Kreuzlingen</text>
+          </g>
+          <g><circle cx="200" cy="280" r="5" fill="#1B3A52"/><text x="200" y="266" text-anchor="middle" font-family="Inter" font-size="10" fill="#0A0A0A">Radolfzell</text></g>
+          <g><circle cx="270" cy="220" r="5" fill="#1B3A52"/><text x="270" y="210" text-anchor="middle" font-family="Inter" font-size="10" fill="#0A0A0A">Stockach</text></g>
+          <g><circle cx="400" cy="240" r="5" fill="#1B3A52"/><text x="400" y="226" text-anchor="middle" font-family="Inter" font-size="10" fill="#0A0A0A">Meersburg</text></g>
+          <g><circle cx="560" cy="200" r="5" fill="#1B3A52"/><text x="560" y="190" text-anchor="middle" font-family="Inter" font-size="10" fill="#0A0A0A">Wangen</text></g>
+          <g><circle cx="130" cy="340" r="5" fill="#1B3A52"/><text x="130" y="358" text-anchor="middle" font-family="Inter" font-size="10" fill="#0A0A0A">Wutöschingen</text></g>
+          <g><circle cx="60" cy="80" r="4" fill="#5C5C5C"/><text x="60" y="100" text-anchor="middle" font-family="Inter" font-size="9" fill="#5C5C5C">Bensheim</text><line x1="60" y1="86" x2="280" y2="220" stroke="#C8C2B3" stroke-width="0.5" stroke-dasharray="2,3"/></g>
+          <g><circle cx="650" cy="60" r="4" fill="#5C5C5C"/><text x="650" y="80" text-anchor="middle" font-family="Inter" font-size="9" fill="#5C5C5C">Berlin</text><line x1="650" y1="66" x2="320" y2="270" stroke="#C8C2B3" stroke-width="0.5" stroke-dasharray="2,3"/></g>
+          <g><circle cx="170" cy="160" r="4" fill="#5C5C5C"/><text x="170" y="148" text-anchor="middle" font-family="Inter" font-size="9" fill="#5C5C5C">Tuttlingen</text></g>
+          <g><circle cx="85" cy="280" r="4" fill="#5C5C5C"/><text x="85" y="270" text-anchor="middle" font-family="Inter" font-size="9" fill="#5C5C5C">Schopfheim</text></g>
+          <g><circle cx="95" cy="200" r="4" fill="#5C5C5C"/><text x="95" y="188" text-anchor="middle" font-family="Inter" font-size="9" fill="#5C5C5C">Villingen</text></g>
+          <g><circle cx="620" cy="320" r="4" fill="#5C5C5C"/><text x="620" y="338" text-anchor="middle" font-family="Inter" font-size="9" fill="#5C5C5C">Liechtenstein</text></g>
+
+          <line x1="40" y1="430" x2="120" y2="430" stroke="#0A0A0A" stroke-width="1"/>
+          <line x1="40" y1="425" x2="40" y2="435" stroke="#0A0A0A" stroke-width="1"/>
+          <line x1="120" y1="425" x2="120" y2="435" stroke="#0A0A0A" stroke-width="1"/>
+          <text x="80" y="450" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#5C5C5C">~ 20 km</text>
+          <g transform="translate(660,420)"><polygon points="0,-12 4,0 0,8 -4,0" fill="#0A0A0A"/><text x="0" y="22" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#5C5C5C">N</text></g>
+        </svg>
+      </div>
+
+      <div class="idx-list">
+        <h4>Standorte · alphabetisch</h4>
+        <div class="idx-rows">
+          <div class="idx-row"><div class="idx-name">Bensheim <span class="sub">SANNER · 27.600 m²</span></div><div class="idx-year">2024</div></div>
+          <div class="idx-row"><div class="idx-name">Berlin <span class="sub">Gründungsprojekt</span></div><div class="idx-year">1998</div></div>
+          <div class="idx-row"><div class="idx-name">Konstanz <span class="sub">Heinrich-Suso-Gymnasium</span></div><div class="idx-year award">2024 · 1. Preis</div></div>
+          <div class="idx-row"><div class="idx-name">Konstanz <span class="sub">Ravensberg · 23.000 m²</span></div><div class="idx-year award">2020 · 1. Preis</div></div>
+          <div class="idx-row"><div class="idx-name">Konstanz <span class="sub">Bodenseeforum · 10.716 m²</span></div><div class="idx-year">2016</div></div>
+          <div class="idx-row"><div class="idx-name">Konstanz <span class="sub">Amalienstrasse · 43 WE</span></div><div class="idx-year">2024</div></div>
+          <div class="idx-row"><div class="idx-name">Liechtenstein <span class="sub">ThyssenKrupp Presta</span></div><div class="idx-year">2018</div></div>
+          <div class="idx-row"><div class="idx-name">Meersburg <span class="sub">Wohnbebauung</span></div><div class="idx-year">2016</div></div>
+          <div class="idx-row"><div class="idx-name">Radolfzell <span class="sub">Schiesserareal</span></div><div class="idx-year award">2023 · 2. Preis</div></div>
+          <div class="idx-row"><div class="idx-name">Schopfheim <span class="sub">IHK Weiterbildungszentrum</span></div><div class="idx-year award">2009 · 1. Preis</div></div>
+          <div class="idx-row"><div class="idx-name">Stockach <span class="sub">Baumer Group</span></div><div class="idx-year">2016</div></div>
+          <div class="idx-row"><div class="idx-name">Villingen <span class="sub">IMS GEAR</span></div><div class="idx-year">2018</div></div>
+          <div class="idx-row"><div class="idx-name">Wangen <span class="sub">AVL SET F&amp;E</span></div><div class="idx-year">2022</div></div>
+          <div class="idx-row"><div class="idx-name">Wutöschingen <span class="sub">Abifor AG · 6.470 m²</span></div><div class="idx-year">2024</div></div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<section id="about">
-  <div class="container">
-    <div class="section-num"><span class="nr">002</span><h2>Das Büro</h2></div>
-    <div class="about-grid">
-      <div class="about-label">Büro<br/>Krehl Girke<br/>Konstanz</div>
-      <div class="about-text reveal">
-        <h3>Wir bauen langsam, weil wir präzise bauen wollen.</h3>
-        <p>Seit 2008 entwerfen wir Wohnhäuser, Sanierungen und kleinere Gewerbeprojekte rund um den Bodensee. Wir glauben an einfache Materialien, ehrlich verbaut, und an die Verantwortung, etwas zu hinterlassen das in 50 Jahren noch funktioniert.</p>
-        <p>Jeder Entwurf beginnt mit einer Frage: Was braucht dieser Ort, dieses Grundstück, diese Familie wirklich? Nicht: Was ist gerade Trend. Daraus entstehen Häuser, die zu ihren Bewohnern passen — und ihren Wert über Jahrzehnte halten.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <div class="container">
-    <div class="section-num"><span class="nr">003</span><h2>Projekte · Auswahl</h2></div>
-    <div class="projects-list">
-      <div class="project-row reveal">
-        <span class="nr">01 /</span>
-        <span class="title">Haus am Hang</span>
-        <span class="meta">Wohnhaus · Stahlbeton, Holz</span>
-        <span class="year">2024</span>
-        <span class="tag">Neubau</span>
-      </div>
-      <div class="project-row reveal">
-        <span class="nr">02 /</span>
-        <span class="title">Sanierung Altstadt</span>
-        <span class="meta">Wohngebäude · Bestand, denkmalgeschützt</span>
-        <span class="year">2023</span>
-        <span class="tag">Sanierung</span>
-      </div>
-      <div class="project-row reveal">
-        <span class="nr">03 /</span>
-        <span class="title">Atelier Hörnle</span>
-        <span class="meta">Atelier &amp; Wohnen · Sichtbeton, Eiche</span>
-        <span class="year">2023</span>
-        <span class="tag">Gewerbe</span>
-      </div>
-      <div class="project-row reveal">
-        <span class="nr">04 /</span>
-        <span class="title">Haus K</span>
-        <span class="meta">Einfamilienhaus · Holzrahmen, Lärche</span>
-        <span class="year">2022</span>
-        <span class="tag">Neubau</span>
-      </div>
-      <div class="project-row reveal">
-        <span class="nr">05 /</span>
-        <span class="title">Praxis am See</span>
-        <span class="meta">Arztpraxis · Sanierung &amp; Erweiterung</span>
-        <span class="year">2022</span>
-        <span class="tag">Gewerbe</span>
-      </div>
-      <div class="project-row reveal">
-        <span class="nr">06 /</span>
-        <span class="title">Doppelhaus am Bodensee</span>
-        <span class="meta">Mehrfamilien · KfW 40, Mauerwerk</span>
-        <span class="year">2021</span>
-        <span class="tag">Neubau</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="services">
-  <div class="container">
-    <div class="section-num"><span class="nr">004</span><h2>Leistungen</h2></div>
-    <div class="service-grid">
-      <div class="service-block reveal">
-        <span class="nr">/ 01</span>
-        <h3>Entwurfsplanung</h3>
-        <p>Vom ersten Skizzen-Gespräch bis zur baureifen Planung. Wir denken die Funktion vom Inneren her und die Form vom Ort her.</p>
-      </div>
-      <div class="service-block reveal">
-        <span class="nr">/ 02</span>
-        <h3>Genehmigungs- und Ausführungsplanung</h3>
-        <p>HOAI-Leistungsphasen 1–5. Sauber dokumentiert, behördlich abgestimmt, baulich realistisch.</p>
-      </div>
-      <div class="service-block reveal">
-        <span class="nr">/ 03</span>
-        <h3>Bauleitung</h3>
-        <p>LP 6–9. Wir sind auf der Baustelle, kontrollieren Qualität und Termine und sind für unsere Bauherren erreichbar.</p>
-      </div>
-      <div class="service-block reveal">
-        <span class="nr">/ 04</span>
-        <h3>Sanierung &amp; Bestand</h3>
-        <p>Bauen im Bestand braucht Demut vor dem Vorhandenen. Wir analysieren, dokumentieren und ergänzen behutsam.</p>
-      </div>
-      <div class="service-block reveal">
-        <span class="nr">/ 05</span>
-        <h3>Innenarchitektur</h3>
-        <p>Wir denken Innenräume nicht als Deko — sondern als räumliche Choreografie. Material, Licht, Sequenz.</p>
-      </div>
-      <div class="service-block reveal">
-        <span class="nr">/ 06</span>
-        <h3>Energetisches Konzept</h3>
-        <p>KfW, EnEV, Förderung. Wir planen energetisch sinnvoll und finanziell realistisch — nicht nur theoretisch.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="quote">
-  <div class="quote-grid">
-    <div class="label">Haltung</div>
+<!-- ─────────── ZEITLINIE ─────────── -->
+<section class="sec wrap">
+  <div class="sec-head">
     <div>
-      <p class="quote-text">Wir wollen <span>nicht</span> die spektakulärsten Häuser bauen. Wir wollen die <span>richtigen</span> bauen.</p>
-      <div class="quote-source">— Büro Krehl Girke, Konstanz</div>
+      <div class="label"><b>03</b>Zeit</div>
+      <h2 class="sec-h">27 Jahre Bauen</h2>
+    </div>
+    <div class="sec-meta">1999 — 2026</div>
+  </div>
+
+  <div class="tl-track">
+    <div class="tl-years">
+      <span>1999</span><span>2005</span><span>2013</span><span>2016</span>
+      <span>2020</span><span>2024</span><span>2026</span>
+    </div>
+    <div class="tl-marks">
+      <div class="pin"><div class="label"><b>Gründung</b>krehl.girke<br>Konstanz</div></div>
+      <div class="pin"><div class="label"><b>planquadrat</b>GmbH<br>Umfirmierung</div></div>
+      <div class="pin"><div class="label"><b>Hotel</b>Reichenau</div></div>
+      <div class="pin"><div class="label"><b>Bodenseeforum</b>10.716 m²</div></div>
+      <div class="pin award"><div class="label"><b>1. Preis</b>Ravensberg</div></div>
+      <div class="pin award"><div class="label"><b>1. Preis</b>H.-Suso-Gym.</div></div>
+      <div class="pin"><div class="label"><b>BA I fertig</b>Ravensberg<br>BA II läuft</div></div>
     </div>
   </div>
 </section>
 
-<section id="contact">
-  <div class="container">
-    <div class="section-num"><span class="nr">005</span><h2>Kontakt</h2></div>
+<!-- ─────────── HALTUNG ─────────── -->
+<section class="sec phil">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="label"><b>04</b>Haltung</div>
+        <h2 class="sec-h">Drei Prinzipien</h2>
+      </div>
+      <div class="sec-meta">seit 1999 unverändert</div>
+    </div>
+
+    <div class="phil-grid">
+      <div class="phil-col">
+        <div class="phil-num">P · 01</div>
+        <h3 class="phil-h">Architektonische Klarheit.</h3>
+        <p class="phil-t">Jedes Bauwerk entwickelt sich aus einer Frage. Das gebaute Ergebnis muss diese Frage lesbar machen — nicht überdecken.</p>
+      </div>
+      <div class="phil-col">
+        <div class="phil-num">P · 02</div>
+        <h3 class="phil-h">Funktionale Präzision.</h3>
+        <p class="phil-t">Wir arbeiten als Generalplaner. Konstruktion, Material und Programm denken wir simultan — vom ersten Strich an.</p>
+      </div>
+      <div class="phil-col">
+        <div class="phil-num">P · 03</div>
+        <h3 class="phil-h">Einbindung in den Ort.</h3>
+        <p class="phil-t">Konstanzer Altstadt, Höri-Dorf, Industrieareal in Bensheim — jedes Programm hat seinen Maßstab. Wir suchen ihn vor der ersten Linie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── STUDIO ─────────── -->
+<section id="studio" class="sec wrap">
+  <div class="sec-head">
+    <div>
+      <div class="label"><b>05</b>Studio</div>
+      <h2 class="sec-h">Vier Partner:innen</h2>
+    </div>
+    <div class="sec-meta">Geschäftsführung · KN · KRZ</div>
+  </div>
+
+  <div class="team-intro">
+    <div class="label">Über das Büro</div>
+    <div class="text">
+      <p>
+        Gegründet 1999 durch Rainer Girke und Martin Krehl in Konstanz.
+        Seit 2024 firmiert das Büro als <mark>KREHL GIRKE ARCHITEKTEN GmbH</mark>; Simon Braun
+        und Carla Krehl ergänzen die Geschäftsleitung.
+      </p>
+      <p>
+        Seit 2025 unterhalten wir eine Zweigniederlassung in <mark>Kreuzlingen, Schweiz</mark>.
+        Wir arbeiten mit privaten und öffentlichen Bauherren sowie als Generalplaner.
+      </p>
+    </div>
+  </div>
+
+  <div class="team-cards">
+
+    <div class="partner">
+      <div class="pid"><span>P · 01</span><span class="role">Gründer</span></div>
+      <h3>Rainer Girke</h3>
+      <div class="cv">
+        <div class="cv-row"><span class="y">1991</span><span class="label">Diplom · TU Karlsruhe</span></div>
+        <div class="cv-row"><span class="y">1999</span><span class="label">krehl.girke architekten</span></div>
+        <div class="cv-row"><span class="y">2005</span><span class="label">planquadrat GmbH</span></div>
+        <div class="cv-row"><span class="y">2024</span><span class="label">KREHL GIRKE GmbH</span></div>
+      </div>
+      <a class="mail" href="mailto:rainer.girke@krehlgirke.com">→ rainer.girke@…</a>
+    </div>
+
+    <div class="partner">
+      <div class="pid"><span>P · 02</span><span class="role">Gründer</span></div>
+      <h3>Martin Krehl</h3>
+      <div class="cv">
+        <div class="cv-row"><span class="y">1993</span><span class="label">Diplom · TU Karlsruhe</span></div>
+        <div class="cv-row"><span class="y">1993—98</span><span class="label">eigenes Büro · Berlin</span></div>
+        <div class="cv-row"><span class="y">1999</span><span class="label">krehl.girke architekten</span></div>
+        <div class="cv-row"><span class="y">2024</span><span class="label">KREHL GIRKE GmbH</span></div>
+      </div>
+      <a class="mail" href="mailto:martin.krehl@krehlgirke.com">→ martin.krehl@…</a>
+    </div>
+
+    <div class="partner">
+      <div class="pid"><span>P · 03</span><span class="role">Partner GL</span></div>
+      <h3>Simon Braun</h3>
+      <div class="cv">
+        <div class="cv-row"><span class="y">2008</span><span class="label">Diplom · HTWG Konstanz</span></div>
+        <div class="cv-row"><span class="y">2006</span><span class="label">Eintritt krehl.girke</span></div>
+        <div class="cv-row"><span class="y">2024</span><span class="label">Geschäftsleitung</span></div>
+        <div class="cv-row highlight"><span class="y">2025</span><span class="label">Zweigstelle Kreuzlingen</span></div>
+      </div>
+      <a class="mail" href="mailto:simon.braun@krehlgirke.com">→ simon.braun@…</a>
+    </div>
+
+    <div class="partner">
+      <div class="pid"><span>P · 04</span><span class="role">Partnerin GL</span></div>
+      <h3>Carla Krehl</h3>
+      <div class="cv">
+        <div class="cv-row"><span class="y">2022</span><span class="label">M.A. · ABK Stuttgart</span></div>
+        <div class="cv-row highlight"><span class="y">19—24</span><span class="label">Herzog &amp; de Meuron · Basel</span></div>
+        <div class="cv-row"><span class="y">2024</span><span class="label">Geschäftsleitung</span></div>
+        <div class="cv-row"><span class="y">2025</span><span class="label">Zweigstelle Kreuzlingen</span></div>
+      </div>
+      <a class="mail" href="mailto:carla.krehl@krehlgirke.com">→ carla.krehl@…</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─────────── KONTAKT ─────────── -->
+<section id="kontakt" class="sec contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="label"><b>06</b>Kontakt</div>
+        <h2 class="sec-h">Im Gespräch</h2>
+      </div>
+      <div class="sec-meta">DE · CH</div>
+    </div>
+
     <div class="contact-grid">
-      <div class="contact-block reveal">
-        <div class="label">Büro</div>
-        <p>Konstanz<br/>am Bodensee</p>
-        <div class="meta-list" style="margin-top:12px"><em>Genaue Adresse vor Pitch verifizieren</em></div>
+
+      <div class="c-card">
+        <div class="lbl"><b>Hauptsitz</b> · DE · 78467</div>
+        <div class="name">KREHL GIRKE ARCHITEKTEN GmbH</div>
+        <p>Hans-Sauerbruch-Strasse 11<br>78467 Konstanz · Deutschland</p>
+        <p class="mono" style="margin-top:18px;">
+          T <a href="tel:+4975319281947">+49 7531 928 1947</a><br>
+          E <a href="mailto:info@krehlgirke.com">info@krehlgirke.com</a>
+        </p>
       </div>
-      <div class="contact-block reveal">
-        <div class="label">Erstgespräch</div>
-        <a href="tel:+497531000000">+49 7531 000000</a>
-        <a href="mailto:buero@krehlgirke.com">buero@krehlgirke.com</a>
+
+      <div class="c-card">
+        <div class="lbl"><b>Zweigniederlassung</b> · CH · 8280</div>
+        <div class="name">KREHL GIRKE ARCHITEKTEN GmbH</div>
+        <p>Rankstrasse 5a<br>8280 Kreuzlingen · Schweiz</p>
+        <p class="mono" style="margin-top:18px;">
+          T <a href="tel:+41762983604">+41 76 298 3604</a><br>
+          E <a href="mailto:info@krehlgirke.com">info@krehlgirke.com</a>
+        </p>
       </div>
-      <div class="contact-block reveal">
-        <div class="label">Bürozeiten</div>
-        <div class="meta-list">Mo–Fr 09:00 – 17:00<br/>Sa, So nach Vereinbarung<br/>Erstgespräch immer kostenfrei.</div>
+
+      <div class="c-card">
+        <div class="lbl"><b>Sozial</b></div>
+        <div class="name">Folgen Sie uns</div>
+        <p class="mono" style="line-height:2;">
+          → <a href="https://www.instagram.com/krehlgirkearchitekten/" target="_blank">Instagram</a><br>
+          → <a href="https://linkedin.com/company/krehl-girke-architekten/" target="_blank">LinkedIn</a><br>
+          → <a href="#">Impressum</a><br>
+          → <a href="#">Datenschutz</a>
+        </p>
       </div>
+
     </div>
   </div>
 </section>
 
-<footer>
-  <div class="foot-inner">
-    <div class="foot-brand"><span class="brand-mark"></span>KREHL GIRKE</div>
-    <div class="foot-meta">
-      © 2026 KREHL GIRKE Architekten · Konstanz · <a href="#impressum">Impressum</a> · <a href="#datenschutz">Datenschutz</a>
+<footer class="bottom">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>© 2026 · KREHL GIRKE ARCHITEKTEN GmbH</div>
+      <div>HRB 731405 · CHE-281.066.185</div>
+      <nav class="foot-nav">
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </nav>
     </div>
   </div>
 </footer>
 
 <script>
-  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // Header hide-on-scroll-down
+  let lastScroll = 0;
+  const top = document.querySelector('header.top');
+  window.addEventListener('scroll', () => {
+    const cur = window.scrollY;
+    if (cur > lastScroll && cur > 240) top.style.transform = 'translateY(-100%)';
+    else top.style.transform = 'translateY(0)';
+    top.style.transition = 'transform 320ms ease';
+    lastScroll = cur;
+  }, { passive: true });
 </script>
 
 </body>
